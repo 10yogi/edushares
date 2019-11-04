@@ -1,13 +1,9 @@
 const multer = require('multer');
+const datauri = require('datauri');
+const path = require('path');
 
-const storage = multer.diskStorage({
-  destination: function(req,file,cb){
-    cb(null,'./public/images');
-  },
-  filename: function(req,file,cb){
-    cb(null,new Date().toISOString()+file.originalname)
-  }
-});
+const storage = multer.memoryStorage()
+const dUri = new datauri();
 
 const fileFilter = (req,file,cb)=>{
   if(file.mimetype==='image/jpeg' || file.mimetype == "image/png")
@@ -24,4 +20,5 @@ const upload = multer({
   fileFilter: fileFilter 
 });
 
-module.exports = upload;
+const dataUri = req => dUri.format(path.extname(req.file.originalname).toString(),req.file.buffer);
+module.exports = {upload,dataUri};

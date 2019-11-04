@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const postsController = require('../controllers/posts');
-const upload = require('../config/multer-config')
+const {upload} = require('../config/multer-config')
 
 //auth with facebook
 router.post('/',upload.single('pic'),postsController.addPost);
