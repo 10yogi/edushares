@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/css/bootstrap-social.css">
+  <script></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class=row>
+            <a class="navbar-brand" href="/home"><img style="width:30px;height:30px; " src='/favicon.ico'></a>
+            <a class="navbar-brand " href="/about" style="font-style:italic;">EduShare</a>
+            <a href="/signup" class="btn btn-default">sign up </a><br />
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    <% if(message.length > 0){ %>
+    <div style="color : red;"><%= message %></div>
+    <% } %>
+    <div class="panel panel-default">
+      <div calss="panel-body">
+       <p>
+        Edu Share is a web based social application in which a user can connect to other users and can share only educational
+        articles with other users.
+        Edu Share is different from other social platforms because it only accepts educational articles to be shared by
+        detecting irrelevant posts through its machine learning based content detection service for various categories such as
+        educational detection, commercial detection, adult content detection and spam detection.
+        
+        Cofounders : Yogesh Kurmi, Samyak Jain IET DAVV 2020
+       </p>
+      </div>
+
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
