@@ -3,7 +3,7 @@
     <h><%=comment.date.toDateString()%></h>
   </div>
   <div class="col-md-2">
-    <strong onclick="showReply('<%=comment._post%>','<%= comment._id %>')">replies| <%=comment.replies.length%> </strong>
+    <strong class = "fa fa-reply" onclick="showReply('<%=comment._post%>','<%= comment._id %>')"><%=comment.replies.length%> </strong>
   </div>
 </div>
 </br>

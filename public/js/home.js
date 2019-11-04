@@ -15,20 +15,22 @@ function showlike(postid){
 
 function likepost(postid){
   $(document).ready(() => {
-    $('#like' + postid).children("span.fa").attr({
+    $('#like' + postid).attr({
       'onclick': "unlikepost('" + postid + "')",
-    }).css({ "color": "rgb(119, 124, 223)" }).next().text((i, origText) => {
-      return ""+(parseInt(origText)+1)+" who";
+    }).css({ "color": "blue" })
+    $("#sl"+postid).children("span").text((i, origText) => {
+      return ""+(parseInt(origText)+1)+" likes";
     });;
     $.post('/posts/' + postid + '/likes',(data)=>{});
   });
 }
 function unlikepost(postid) {
   $(document).ready(() => {
-    $('#like' + postid).children("span.fa").attr({
+    $('#like' + postid).attr({
       'onclick': "likepost('" + postid + "')",
-    }).css({"color":"black"}).next().text((i,origText)=>{
-      return ""+(parseInt(origText)-1)+" who";
+    }).css({"color":"black"})
+    $('#sl'+postid).children("span").text((i,origText)=>{
+      return ""+(parseInt(origText)-1)+" likes";
     });
 
    // window.alert(this.response);
@@ -78,6 +80,9 @@ function addComment(postid) {
       if (this.status == 200)
        $(document).ready(() => {
           showComment(postid);
+         $('#sc' + postid).children("span").text((i, origText) => {
+           return "" + (parseInt(origText) + 1) + " comments";
+         });
         })
       else
         alert(this.responseText);
@@ -131,7 +136,9 @@ function deleteComment(postid, commentid) {
         $(document).ready(() => {
           showComment(postid);
         })
-
+        $('#sc' + postid).children("span").text((i, origText) => {
+          return "" + (parseInt(origText) - 1) + " | comments";
+        });
       } else
         window.alert(this.responseText);
       return;

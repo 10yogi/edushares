@@ -15,34 +15,32 @@
 
 <body>
 
-
-
-
   <% 
-        var likedpost={};
-        user.mylikes.forEach(data=>{
-          likedpost[data] = true;
-        })
-      %>
+    var likedpost={};
+    user.mylikes.forEach(data=>{
+      likedpost[data] = true;
+    })
+  %>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <div class = row>
-<a  class="navbar-brand"href="/home"><img style="width:30px;height:30px; " src='/favicon.ico'></a>
-<a class="navbar-brand " href="/about" style="font-style:italic;">EduShare</a>
+          <a  class="navbar-brand"href="/home"><img style="width:30px;height:30px; " src='/favicon.ico'></a>
+          <a class="navbar-brand " href="/about" style="font-style:italic;">EduShare</a>
         </div>
       </div>
+
       <ul class="nav navbar-nav">
-  
-        <li><a href="/profile">
-            welcome : <%= user.username%></a></li>
+        <li><a href="/profile">welcome : <%= user.username%></a></li>
       </ul>
+
       <button class="btn navbar-btn" data-toggle="modal" data-target="#addPostModal">add post</button></a>
       <a href="/logout"><button class="btn btn-signout navbar-btn">logout</button></a>
     </div>
   </nav>
-<div class="container">
+
+  <div class="container">
     <!-- Modal -->
     <div class="modal fade" id="addPostModal" role="dialog">
       <div class="modal-dialog">
@@ -127,7 +125,7 @@
 <br />
 <br />
 
-  <h >                       Only Educational Articles For You From EduShare          </h>
+  <strong >Only Educational Articles For You From EduShare</strong>
   <br/>
   <br/>
   <br/>
@@ -171,25 +169,25 @@
           <p style="font-size:18px;"><%=post.story %></p>
         </div>
         <br/>
-  <div class = "row" id = "lc<%=post.id%>" >
-    <div class = "col-md-3" onclick="showlike('<%=post._id%>')" style = "color: blue"> <%= post.likes.length %> | likes</div>
-    <div class="col-md-3" onclick="showComment('<%= post._id %>')" style="color: blue"> <%= post.comments.length %> | comments</div>
+  <div class = "row"  >
+    <div class = "col-md-3" id = "sl<%=post.id%>" onclick="showlike('<%=post._id%>')" style = "color: blue"> <span><%= post.likes.length %> likes</span></div>
+    <div class="col-md-3" id = "sc<%=post.id%>" onclick="showComment('<%= post._id %>')" style="color: blue"> <span><%= post.comments.length %> comments</span></div>
   </div>
 
   <div class="row" >
   
-    <div clas="col-md-1" id="like<%=post.id%>">
-    <%if(likedpost[post._id]){%>
-   <span  onclick="unlikepost('<%=post._id%>')" class="fa fa-thumbs-up" style="font-size:25px;color:rgb(22, 32, 206)" ></span>
-    <%}else{%>
-   <span  onclick="likepost('<%=post._id%>')" class="fa fa-thumbs-up" style="font-size:25px;color:black" ></span>
-    <%}%>
+     <%if(likedpost[post._id]){%>
+        <div class="col-md-3"><span id="like<%=post.id%>"  onclick="unlikepost('<%=post._id%>')" class="fa fa-thumbs-up" style="font-size:22px;color:blue"/></div>
+     <%}else{%>
+        <div class="col-md-3"><span id="like<%=post.id%>"  onclick="likepost('<%=post._id%>')" class="fa fa-thumbs-up" style="font-size:22px;color:black" /></div>
+     <%}%>
+    
+
+    <div class = "col-md-3" ">
+      <span class="fa fa-comments-o" style="font-size: 22px  " onclick="showComment('<%= post._id %>')"></span>
+    </div>
   </div>
 
-  <div class = "col-md-2" ">
-    <span class="fa fa-comments-o" style="font-size: 22px  " onclick="showComment('<%= post._id %>')"></span>
-  </div>
-  </div>
   <div id="c<%=post.id%>"></div>
   
 
