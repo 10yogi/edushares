@@ -2,7 +2,7 @@
 <html>
 <style>
   body {
-    background-image: url("/images/signup.jpeg");
+      background-image: url("https://i.ibb.co/G7j7nxY/signup.jpg");
     background-size: cover;
   }
 </style>
@@ -32,11 +32,12 @@
     <br /><br /><br /><br />
     <br /><br /><br /><br />
     <br /><br /><br /><br />
-    <% if(message.length > 0){ %>
-    <div style="color : red;"><%= message %></div>
-    <% } %>
+   
     <div class="panel panel-default">
       <div calss="panel-body">
+        <% if(message.length > 0){ %>
+        <div style="color : red;"><%= message %></div>
+        <% } %>
         <form action="/login" method="post">
           <div>
             <label>username :  </label> <input type="text" minlength="3" name="email" />
