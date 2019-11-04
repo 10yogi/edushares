@@ -33,22 +33,31 @@
     <br /><br /><br /><br />
     <br /><br /><br /><br />
    
-    <div class="panel panel-default">
+    <div class="panel panel-success">
+      <div class = "panel panel-heading">
+        <div class = "row">LogIn</div>
+      </div>
       <div calss="panel-body">
+        <div class = "row">
         <% if(message.length > 0){ %>
-        <div style="color : red;"><%= message %></div>
+        <div  class = "col-md-3" style="color : red;"><%= message %></div>
         <% } %>
+        <div class = "col-md-3">
         <form action="/login" method="post">
           <div>
             <label>username :  </label> <input type="text" minlength="3" name="email" />
           </div>
+          <br/>
           <div>
             <label>Password :  </label> <input type="password" minlength="3" name="password" />
           </div>
+          <br/>
           <button type="submit">Login</button>
           <p>Need an account?<a href="/signup">Signup</a>
 
         </form>
+      </div>
+      </div>
       </div>
 
     </div>

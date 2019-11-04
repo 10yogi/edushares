@@ -31,8 +31,11 @@
         <br /><br /><br /><br />
         <br /><br /><br /><br />
   
-        <div class="panel panel-default">
-          <div calss="panel-body">
+        <div class="panel panel-success">
+          <div class = "panel panel-heading">
+            <div class = "row">SignUp</div>
+          </div>
+          <div calss="panel panel-body">
               <% if (message.length > 0) { %>
               <div style="color:red;"><%= message %></div>
               <% } %>
@@ -41,23 +44,27 @@
                   <label>username   : </label>
                   <input type="text" minlength="3" name="email">
                 </div>
+                <br/>
                 <div>
                   <label>Password   : </label>
                   <input type="password" minlength="3" name="password">
                 </div>
+                <br/>
                 <div>
                   <label>First Name : </label>
-                  <input type="text" minlength="3" name="email">
+                  <input type="text" minlength="3" >
                 </div>
+                <br/>
                 <div>
                   <label>Last Name  : </label>
-                  <input type="text" minlength="3" name="email">
+                  <input type="text" minlength="3" >
                 </div>
+                <br/>
                 <div>
                   <label>Mobile No  :  </label>
-                  <input type="text" minlength="3" name="email">
+                  <input type="text" minlength="3" >
                 </div>
-
+                <br/>
                 <button type="submit">Signup</button>
               </form>
               <p>Already have an account? <a href="/login">Login</a></p>
