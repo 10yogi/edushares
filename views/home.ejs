@@ -146,13 +146,13 @@
           <span class="fa fa-caret-down" data-toggle="dropdown"> more </span>
           <ul class="dropdown-menu">
             <% if(post._user._id.equals(user._id) ){%>
-            <li><strong onclick="editPost('<%=post._id%>')" data-toggle="modal" data-target="#editBox">edit-story</strong>
+            <li><strong onclick="editPost('<%=post._id%>')" data-toggle="modal" data-target="#editBox" style = "color:red">edit-story</strong>
             </li>
             <br/>
-            <li> <strong onclick="deletePost('<%=post.id%>')">delete</strong></li>
+            <li> <strong onclick="deletePost('<%=post.id%>')" style = "color:red">delete</strong></li>
             <%}%>
             <br/>
-            <li><strong data-toggle="modal"> report </strong></li>
+            <li><strong data-toggle="modal" style = "color:red"> report </strong></li>
             <br/>  
             </ul>
         </div>

@@ -25,9 +25,9 @@
               </button>
               <ul class="dropdown-menu">
                 <%if(user._id.toString() === comment._user._id.toString()){%>
-                <li class="divider"><strong onclick="editComment('<%=comment._post%>','<%=comment._id%>')" data-toggle="modal"
-                    data-target="#editBox">edit</strong></li>
-                  <li class="divider"><strong onclick="deleteComment('<%= post.id %>','<%= comment.id %>')">delete</strong></li>
+                  <li class="divider"><strong onclick="editComment('<%=comment._post%>','<%=comment._id%>')" data-toggle="modal" data-target="#editBox" style="color:red">edit</strong></li>
+                  <li class="divider"><strong onclick="deleteComment('<%= post.id %>','<%= comment.id %>')" style="color:red">delete</strong></li>
+                  <li class="divider"><strong onclick="reportComment('<%= post.id %>','<%= comment.id %>')" style="color:red">report</strong></li>
                 <%}%>
               </ul>
             </div> 
