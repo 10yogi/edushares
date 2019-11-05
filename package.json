@@ -1,5 +1,5 @@
 {
-  "name": "sharepicsapp",
+  "name": "EduShare",
   "version": "1.0.0",
   "description": "a app in which user can register and posts, like and comments on photos.",
   "main": "app.js",
