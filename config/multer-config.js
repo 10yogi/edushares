@@ -6,7 +6,7 @@ const storage = multer.memoryStorage()
 const dUri = new datauri();
 
 const fileFilter = (req,file,cb)=>{
-  if(file.mimetype==='image/jpeg' || file.mimetype == "image/png")
+  if(file.mimetype=='image/jpeg' || file.mimetype == "image/png" || file.mimetype == "image/jpg")
      cb(null,true);
   else
     cb(null,false);
